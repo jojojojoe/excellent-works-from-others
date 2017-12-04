@@ -26,10 +26,10 @@
             <div class="container">
               <nav>
                 <ul class="header-nav row">
-                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#podrtfolio" id="portfolio-link">Portfolio</a></li>
-                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#blog" id="blog-link">Blog</a></li>
-                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#about" id="about-link">About</a></li>
-                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#contact" id="contact-link">Contact</a></li>
+                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#" id="portfolio-link">Portfolio</a></li>
+                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#" id="blog-link">Blog</a></li>
+                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#" id="about-link">About</a></li>
+                  <li class="header-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#" id="contact-link">Contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -43,10 +43,10 @@
             </nav>
             <div class="hamburger-menu-item-wrapper collapse" id="hamburgerMenu">
                 <ul>
-                  <li class="hamburger-menu-item col-sm-12"><a href="#">Portfolio</a></li>
+                  <li class="hamburger-menu-item col-sm-12"><a href="#" id="portfolio-link-mobile">Portfolio</a></li>
                   <li class="hamburger-menu-item col-sm-12"><a href="#">Blog</a></li>
                   <li class="hamburger-menu-item col-sm-12"><a href="#">About</a></li>
-                  <li class="hamburger-menu-item col-sm-12"><a href="#">Contact</a></li>
+                  <li class="hamburger-menu-item col-sm-12"><a href="#" id="contact-link-mobile">Contact</a></li>
                 </ul>
             </div>
           </div>
@@ -151,7 +151,7 @@
             <div class="container">
               <nav>
                 <ul class="footer-nav row">
-                  <li class="footer-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#">Portfolio</a></li>
+                  <li class="footer-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#" id="portfolio-link-footer">Portfolio</a></li>
                   <li class="footer-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#">Blog</a></li>
                   <li class="footer-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#">About</a></li>
                   <li class="footer-nav-item col-sm-12 col-md-3 col-lg-3"><a href="#">Contact</a></li>
@@ -172,12 +172,42 @@
 
     <script>
       var featureWorkElm = document.getElementById('portfolio')
-      var portfolioLinkElm = document.getElementById('portfolio-link')
+      var contactElm = document.getElementById('contact')
 
-      portfolioLinkElm.addEventListener('click',function(){
-        var featureWorkTop = featureWorkElm.getBoundingClientRect().top
-        console.log('----', featureWorkTop)
-        window.scroll({ top: featureWorkTop, left: 0, behavior: 'smooth' });
+      var portfolioLinkElm = document.getElementById('portfolio-link')
+      var portfolioLinkMobileElm = document.getElementById('portfolio-link-mobile')
+      var portfolioLinkMobileFooter = document.getElementById('portfolio-link-footer')
+      var contactLinkElm = document.getElementById('contact-link')
+      var contactLinkMobileElm = document.getElementById('contact-link-mobile')
+
+      function jumpSection(section){
+
+        var top = 0;
+        if (section == 'feature') {
+          top = featureWorkElm.getBoundingClientRect().top
+        }else if(section == 'contact'){
+          top = contactElm.getBoundingClientRect().top
+        }
+        // console.log('----', top)
+        window.scroll({ top: top, left: 0, behavior: 'smooth' });
+      }
+
+
+      portfolioLinkElm.addEventListener('click', function(){
+        jumpSection('feature')
+      })
+      portfolioLinkMobileElm.addEventListener('click', function(){
+        jumpSection('feature')
+      })
+      portfolioLinkMobileFooter.addEventListener('click', function(){
+        jumpSection('feature')
+      })
+
+      contactLinkElm.addEventListener('click', function(){
+        jumpSection('contact')
+      })
+      contactLinkMobileElm.addEventListener('click', function(){
+        jumpSection('contact')
       })
     </script>
 
