@@ -193,20 +193,25 @@
       }
 
 
-      portfolioLinkElm.addEventListener('click', function(){
+      portfolioLinkElm.addEventListener('click', function(e){
+        e.preventDefault()
         jumpSection('feature')
       })
-      portfolioLinkMobileElm.addEventListener('click', function(){
+      portfolioLinkMobileElm.addEventListener('click', function(e){
+        e.preventDefault()
         jumpSection('feature')
       })
-      portfolioLinkMobileFooter.addEventListener('click', function(){
-        jumpSection('feature')
+      portfolioLinkMobileFooter.addEventListener('click', function(e){
+        e.preventDefault()
+        jumpSection('footer')
       })
 
-      contactLinkElm.addEventListener('click', function(){
+      contactLinkElm.addEventListener('click', function(e){
+        e.preventDefault()
         jumpSection('contact')
       })
-      contactLinkMobileElm.addEventListener('click', function(){
+      contactLinkMobileElm.addEventListener('click', function(e){
+        e.preventDefault()
         jumpSection('contact')
       })
     </script>
